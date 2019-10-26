@@ -6,7 +6,16 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
-    [SerializeField] private float movementSpeed;
+
+    private float movementSpeed;
+
+    [SerializeField] private float runSpeed;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float buildUpSpeed;
+    [SerializeField] private KeyCode runKey;
+
+    [SerializeField] private float slopeForce;
+    [SerializeField] private float slopeForceRayLength;
 
     private CharacterController charController;
     private bool isJump;
@@ -28,15 +37,41 @@ public class PlayerMove : MonoBehaviour
 
     private void PlayerMovement()
     {
-        float horizInput = Input.GetAxis(horizontalInputName) * movementSpeed;
-        float vertInput = Input.GetAxis(verticalInputName) * movementSpeed;
+        float horizInput = Input.GetAxis(horizontalInputName);
+        float vertInput = Input.GetAxis(verticalInputName);
 
         Vector3 forwardMovement = transform.forward * vertInput;
         Vector3 rightMovement = transform.right * horizInput;
 
-        charController.SimpleMove(forwardMovement + rightMovement);
+        charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
 
+        if ((vertInput != 0 || horizInput != 0) && OnSlope())
+            charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
+
+        SetMovementSpeed();
         JumpInput();
+    }
+
+    private void SetMovementSpeed()
+    {
+        if (Input.GetKey(runKey))
+            movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, buildUpSpeed * Time.deltaTime);
+        else
+            movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, buildUpSpeed * Time.deltaTime);
+    }
+
+    private bool OnSlope()
+    {
+        if (isJump)
+            return false;
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, charController.height / 2 * slopeForceRayLength))
+            if (hit.normal != Vector3.up)
+                return true;
+
+        return false;
     }
 
     private void JumpInput()
