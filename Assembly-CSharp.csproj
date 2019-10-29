@@ -60,6 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Hilang.cs" />
+    <Compile Include="Assets\Script\Dialogue.cs" />
+    <Compile Include="Assets\Script\DialogueManager.cs" />
+    <Compile Include="Assets\Script\DialogueTrigger.cs" />
     <Compile Include="Assets\Script\PlayerLook.cs" />
     <Compile Include="Assets\Script\PlayerMove.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
