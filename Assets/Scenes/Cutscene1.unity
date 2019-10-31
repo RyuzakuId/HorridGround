@@ -676,8 +676,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: -8.56}
-  m_SizeDelta: {x: 330, y: 60}
+  m_AnchoredPosition: {x: -0, y: -6.4}
+  m_SizeDelta: {x: 550, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443244081
 MonoBehaviour:
@@ -971,13 +971,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     names:
-    - kamu
-    - aku
-    - kamu
+    - Lisa
+    - Cult
+    - Lisa
+    - Cult
+    - Lisa
     sentences:
-    - Haloo kawan....
-    - Selamat datang di duniaku yang tercinta ini.
-    - Semoga kau senang berpetualang di dunia ini.
+    - Dimanakah aku????
+    - Selamat datang di Labyrinth of Fear milikku anak muda.
+    - Siapa kau? bagaimana aku berada disini?
+    - Namaku adalah Cult, pengikut setia dari raja dunia bawah Revenant. Kalau kau
+      ingin tahu lebih banyak, selesaikanlah labirin miliku ini. Semoga kau menikmati
+      labirin miliku ahahahahahaha...............
+    - Hei..... jangan pergi.......
 --- !u!222 &1805496012
 CanvasRenderer:
   m_ObjectHideFlags: 0

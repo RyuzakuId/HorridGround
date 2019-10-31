@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -24,15 +25,21 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float jumpmultiplier;
     [SerializeField] private KeyCode jumpKey;
 
+    // Stamina
+    [SerializeField] private Slider staminaBar;
+    private float stamina;
+
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
+        stamina = staminaBar.maxValue;
     }
 
 
     void Update()
     {
         PlayerMovement();
+        staminaBar.value = stamina;
     }
 
     private void PlayerMovement()
@@ -55,9 +62,20 @@ public class PlayerMove : MonoBehaviour
     private void SetMovementSpeed()
     {
         if (Input.GetKey(runKey))
-            movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, buildUpSpeed * Time.deltaTime);
+        {
+            if (stamina >= staminaBar.minValue)
+            {
+                stamina -= 0.3f;
+                movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, buildUpSpeed * Time.deltaTime);
+            }
+            else
+                movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, buildUpSpeed * Time.deltaTime);
+        }
         else
+        {
+            if(stamina <= staminaBar.maxValue) stamina += 0.1f;
             movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, buildUpSpeed * Time.deltaTime);
+        }
     }
 
     private bool OnSlope()
