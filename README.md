@@ -1,10 +1,12 @@
 # Horrid Ground
 
 ### Game Engine
-    Unity3D Version 2018.3.1f
+| Unity3D Version 2018.3.1f |
+| ----- |
 
 ### Storyline
-    Seorang Anak yang tiba tiba terbangun di sebuah labirin entah berantah. Dia mencoba untuk lari dari labirin tersebut.
+| Seorang Anak yang tiba tiba terbangun di sebuah labirin entah berantah. Dia mencoba untuk lari dari labirin tersebut. |
+| ----- |
 
 ### Gameplay
 * First Person Perspective
