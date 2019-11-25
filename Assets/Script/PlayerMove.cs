@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -24,22 +25,46 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private AnimationCurve jumpFallOff;
     [SerializeField] private float jumpmultiplier;
     [SerializeField] private KeyCode jumpKey;
+    [SerializeField] GameObject uiInteractable, runningStep, walkingStep;
+
+    bool isRunning = false, gerak = false;
 
     // Stamina
     [SerializeField] private Slider staminaBar;
     private float stamina;
+    AudioSource breath;
+    static AudioClip breathClip;
 
-    private void Awake()
+    void Awake()
     {
         charController = GetComponent<CharacterController>();
         stamina = staminaBar.maxValue;
+        breathClip = Resources.Load<AudioClip>("breathing");
+        breath = GetComponent<AudioSource>();
+        breath.clip = breathClip;
     }
-
 
     void Update()
     {
         PlayerMovement();
         staminaBar.value = stamina;
+        if (gerak && !PauseScript.isPaused) {
+            walkingStep.SetActive(!isRunning);
+            runningStep.SetActive(isRunning);
+        }
+        else
+        {
+            walkingStep.SetActive(false);
+            runningStep.SetActive(false);
+        }
+
+        if (stamina < 50f && !breath.isPlaying){
+            Debug.Log("Breathing");
+            breath.Play();
+        } else if (breath.isPlaying && stamina >= 50f) {
+            Debug.Log("Stop Breathing");
+            breath.Stop();
+        }
     }
 
     private void PlayerMovement()
@@ -52,8 +77,14 @@ public class PlayerMove : MonoBehaviour
 
         charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
 
+        if ((vertInput != 0 || horizInput != 0))
+            gerak = true;
+        else gerak = false;
+
         if ((vertInput != 0 || horizInput != 0) && OnSlope())
+        {
             charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
+        }
 
         SetMovementSpeed();
         JumpInput();
@@ -61,19 +92,24 @@ public class PlayerMove : MonoBehaviour
 
     private void SetMovementSpeed()
     {
-        if (Input.GetKey(runKey))
+        if (Input.GetKey(runKey) && gerak)
         {
             if (stamina >= staminaBar.minValue)
             {
+                isRunning = true;
                 stamina -= 0.3f;
                 movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, buildUpSpeed * Time.deltaTime);
             }
             else
+            {
+                isRunning = false;
                 movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, buildUpSpeed * Time.deltaTime);
+            }
         }
         else
         {
-            if(stamina <= staminaBar.maxValue) stamina += 0.1f;
+            isRunning = false;
+            if (stamina <= staminaBar.maxValue) stamina += 0.1f;
             movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, buildUpSpeed * Time.deltaTime);
         }
     }
@@ -117,5 +153,37 @@ public class PlayerMove : MonoBehaviour
         charController.slopeLimit = 45.0f;
         isJump = false;
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        //Debug.Log(other.name);
+        if (other.CompareTag("Enemy"))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("Lose");
+            Debug.Log("Game Over");
+        }
+
+        if (other.CompareTag("Interactable"))
+        {
+            // Text Muncul
+            Debug.Log("Press E to Interact");
+            uiInteractable.SetActive(!uiInteractable.activeSelf);
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKeyDown(KeyCode.E) && other.CompareTag("Interactable"))
+        {
+            uiInteractable.SetActive(false);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {            
+        uiInteractable.SetActive(!uiInteractable.activeSelf);
+    }
+
 
 } // CLASS

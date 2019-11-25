@@ -9,9 +9,18 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 6eeba2b3eab9646408f4c0b8e35234e6
+  - enabled: 1
     path: Assets/Scenes/Cutscene1.unity
     guid: 94cf9f0b46ffe1d4d83c6d202c1b2c66
   - enabled: 1
     path: Assets/Scenes/Stage1.unity
     guid: 570ffea1b3f4dfb4089ba895ed6d8a4b
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 0990cf92f079f044d8971b4cab1de807
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: b69c9e27978a6e049a513998ab748f0a
   m_configObjects: {}

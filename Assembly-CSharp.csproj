@@ -63,22 +63,31 @@
     <Compile Include="Assets\Script\Dialogue.cs" />
     <Compile Include="Assets\Script\DialogueManager.cs" />
     <Compile Include="Assets\Script\DialogueTrigger.cs" />
+    <Compile Include="Assets\Script\DoorEvent.cs" />
+    <Compile Include="Assets\Script\EnemyAi.cs" />
+    <Compile Include="Assets\Script\GameControl.cs" />
+    <Compile Include="Assets\Script\MainMenuUI.cs" />
+    <Compile Include="Assets\Script\PanelController.cs" />
+    <Compile Include="Assets\Script\PauseScript.cs" />
     <Compile Include="Assets\Script\PlayerLook.cs" />
     <Compile Include="Assets\Script\PlayerMove.cs" />
+    <Compile Include="Assets\Script\RoomManager.cs" />
+    <Compile Include="Assets\Script\Timer.cs" />
+    <Compile Include="Assets\SoundManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/RyuzakuID/Desktop/Old file/Sleepyt_Project/Project Game Grafkom/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/Old file/Sleepyt_Project/Project Game Grafkom/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/RyuzakuID/Desktop/Old file/Sleepyt_Project/Project Game Grafkom/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>E:/Old file/Sleepyt_Project/Project Game Grafkom/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/RyuzakuID/Desktop/Old file/Sleepyt_Project/Project Game Grafkom/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>E:/Old file/Sleepyt_Project/Project Game Grafkom/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/RyuzakuID/Desktop/Old file/Sleepyt_Project/Project Game Grafkom/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/Old file/Sleepyt_Project/Project Game Grafkom/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/RyuzakuID/Desktop/Old file/Sleepyt_Project/Project Game Grafkom/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>E:/Old file/Sleepyt_Project/Project Game Grafkom/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/MyPros/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -282,13 +291,13 @@
       <HintPath>D:/MyPros/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/RyuzakuID/Desktop/Old file/Sleepyt_Project/Project Game Grafkom/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>E:/Old file/Sleepyt_Project/Project Game Grafkom/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/RyuzakuID/Desktop/Old file/Sleepyt_Project/Project Game Grafkom/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>E:/Old file/Sleepyt_Project/Project Game Grafkom/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/RyuzakuID/Desktop/Old file/Sleepyt_Project/Project Game Grafkom/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>E:/Old file/Sleepyt_Project/Project Game Grafkom/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:/MyPros/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
