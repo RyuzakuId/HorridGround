@@ -10,9 +10,9 @@
 | Game Engine | Assets | Other |
 | ----- | ----- | ----- |
 | *Unity Version 2018.3.1* | *Unity Asset Store* | *Audacity* |
-|| *Youtube Music Library* ||
-|| *Mixamo.com* ||
-|| *freesound.com* ||
+|  | *Youtube Music Library* |  |
+|  | *Mixamo.com* |  |
+|  | *freesound.com* |  |
 
 ### Storyline
 > Seorang Anak yang tiba tiba terbangun di sebuah labirin. Dia bertemu dengan orang yang aneh bernama Cult. Cult mengatakan bahwa jika anak itu ingin selamat, dia harus menyelesaikan puzzle yang ada di labirin agar keluar dari labirin dengan selamat.
@@ -22,6 +22,7 @@
 [//]: # (link video gameplay)
 
 Game ini adalah game first person perspective, control dasarnya adalah :
+
 | Tombol Keyboard | Fungsi |
 | ----- | ----- |
 | Esc | Pause |
