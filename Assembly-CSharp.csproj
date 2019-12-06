@@ -71,9 +71,9 @@
     <Compile Include="Assets\Script\PauseScript.cs" />
     <Compile Include="Assets\Script\PlayerLook.cs" />
     <Compile Include="Assets\Script\PlayerMove.cs" />
-    <Compile Include="Assets\Script\RoomManager.cs" />
+    <Compile Include="Assets\Script\PopClue.cs" />
+    <Compile Include="Assets\Script\SoundManager.cs" />
     <Compile Include="Assets\Script\Timer.cs" />
-    <Compile Include="Assets\SoundManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/Old file/Sleepyt_Project/Project Game Grafkom/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

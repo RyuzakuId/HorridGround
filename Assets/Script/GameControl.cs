@@ -9,9 +9,8 @@ public class GameControl : MonoBehaviour
     DoorEvent gameEvent;
     public int eventId;
     [SerializeField] GameObject enemy;
-    //[SerializeField] GameObject player;
     [SerializeField] GameObject timer;
-    //AudioSource music;
+    [SerializeField] GameObject eventTask;    
     public bool gameStart = false;
     static AudioClip bgm, chasing;
     AudioSource ads;
@@ -28,7 +27,6 @@ public class GameControl : MonoBehaviour
     void Start()
     {
         gameEvent = FindObjectOfType<DoorEvent>();
-        //music = player.GetComponent<AudioSource>();
         eventId = 0;
         ads.Play();
     }
@@ -69,13 +67,13 @@ public class GameControl : MonoBehaviour
     {
         enemy.SetActive(true);
         timer.SetActive(true);
-        //music.enabled = !music.enabled;
         gameStart = true;
     }
 
     void OpeningDoor()
     {
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = !Cursor.visible;
+        //Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Win");
     }
 }

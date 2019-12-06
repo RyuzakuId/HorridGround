@@ -7,7 +7,6 @@ using UnityEngine.AI;
 public class EnemyAi : MonoBehaviour
 {
     public Transform player;
-    //[SerializeField] AudioSource music;
     Timer timer;
     [SerializeField] GameObject pintu;
     GameControl gc;
@@ -24,14 +23,14 @@ public class EnemyAi : MonoBehaviour
     void Start()
     {
         enemyAI = GetComponent<NavMeshAgent>();
-        enemyAI.speed = 18f;
+        enemyAI.speed = 20f;
     }
 
     // Update is called once per frame
     void Update()
     {
         enemyAI.SetDestination(player.position);
-        enemyAI.speed += 0.1f * Time.deltaTime;
+        enemyAI.speed += 0.5f * Time.deltaTime;
         FaceTarget();
 
         if (timer.currentTime < 0.5f)
@@ -39,7 +38,6 @@ public class EnemyAi : MonoBehaviour
             Destroy(gameObject);
             gc.eventId += 1;
             pintu.SetActive(true);
-            //music.enabled = !music.enabled;
         }
     }
 

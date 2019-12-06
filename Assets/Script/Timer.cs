@@ -25,5 +25,11 @@ public class Timer : MonoBehaviour
             currentTime -= 1 * Time.deltaTime;
             timer.text = currentTime.ToString("00");
         }
+
+        if (currentTime <= 0)
+        {
+            timer.text = "Find The Door";
+            timer.fontSize = 30;
+        }
     }
 }

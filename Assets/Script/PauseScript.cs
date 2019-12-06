@@ -25,7 +25,8 @@ public class PauseScript : MonoBehaviour
 
     public void Resume()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = !Cursor.visible;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
@@ -33,13 +34,15 @@ public class PauseScript : MonoBehaviour
 
     public void ExitMainMenu()
     {
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = !Cursor.visible;
+        //Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Menu");
     }
 
     void Pause()
     {
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = !Cursor.visible;
+        //Cursor.lockState = CursorLockMode.None;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
+    [SerializeField] GameObject creditPanel;
+
 
     public void PlayGame()
     {
@@ -21,4 +23,15 @@ public class MainMenuUI : MonoBehaviour
         Debug.Log("Quit Game");
         Application.Quit();
     }
+
+    public void OpenCreditPanel ()
+    {
+        creditPanel.SetActive(true);
+    }
+
+    public void CloseCreditPanel ()
+    {
+        creditPanel.SetActive(false);
+    }
+
 }

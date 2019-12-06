@@ -159,7 +159,7 @@ public class PlayerMove : MonoBehaviour
         //Debug.Log(other.name);
         if (other.CompareTag("Enemy"))
         {
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = !Cursor.visible;
             SceneManager.LoadScene("Lose");
             Debug.Log("Game Over");
         }
