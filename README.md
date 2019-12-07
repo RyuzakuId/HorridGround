@@ -39,4 +39,5 @@ Game ini adalah game first person perspective, control dasarnya adalah :
 | E | Interaksi ke objek |
 | Space | Lompat |
 
-
+### Download Playable
+[Horrig Ground.zip](https://drive.google.com/file/d/1TxAXvN4wbPNxkEV8jrmn0TCjRgYu5l4P/view?usp=sharing)
