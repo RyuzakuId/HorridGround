@@ -18,9 +18,9 @@
 > Seorang Anak yang tiba tiba terbangun di sebuah labirin. Dia bertemu dengan orang yang aneh bernama Cult. Cult mengatakan bahwa jika anak itu ingin selamat, dia harus menyelesaikan puzzle yang ada di labirin agar keluar dari labirin dengan selamat.
 
 ### Gameplay
-[//]: # (Screenshot gameplay)
-[//]: # (link video gameplay)
+[![](http://img.youtube.com/vi/8CFFvwBAgP8/0.jpg)](http://www.youtube.com/watch?v=8CFFvwBAgP8 "")
 
+### How to Use
 Game ini adalah game first person perspective, control dasarnya adalah :
 
 | Tombol Keyboard | Fungsi |
