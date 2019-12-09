@@ -15,7 +15,7 @@
 |  | *freesound.com* |  |
 
 ### Storyline
-> Seorang Anak yang tiba tiba terbangun di sebuah labirin. Dia bertemu dengan orang yang aneh bernama Cult. Cult mengatakan bahwa jika anak itu ingin selamat, dia harus menyelesaikan puzzle yang ada di labirin agar keluar dari labirin dengan selamat.
+> Jojo, seorang anak terbangun pada suatu tempat yang tidak diketahui. Ia disapa oleh sesosok Cult dan mengatakan jika ia ingin terbebas maka ia harus melewati labirin ini hingga selesai. Selamat atau tidaknya hanya ia sendiri lah yang dapat menentukannya. 
 
 ### Screenshots
 ![alt text](https://github.com/RyuzakuId/HorridGround/blob/master/Screenshots/ss1.PNG)
